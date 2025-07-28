@@ -4,7 +4,7 @@ import { getHttpEndpoint } from "@orbs-network/ton-access";
 
 const mnemonic = 'SEED PHRASE';
 
-async function sendTon() {
+async function sendTon(address, amount) {
   const key = await mnemonicToWalletKey(mnemonic.split(" "));
   const wallet = WalletContractV5R1.create({ publicKey: key.publicKey, workchain: 0 });
   const endpoint = await getHttpEndpoint({ network: "mainnet" });
